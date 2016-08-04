@@ -1,0 +1,25 @@
+header {
+  background: url(./header.jpg);
+  height: 100px;
+  margin-bottom: 50px; }
+  header h1 {
+    text-align: center; }
+
+.content {
+  display: flex;
+  justify-content: space-around; }
+
+.shirt {
+  flex: 1 1 0;
+  border: 1px solid lightblue;
+  max-width: 30%; }
+  .shirt img {
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin-top: 10px; }
+  .shirt p {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .shirt span {
+    float: right; }
