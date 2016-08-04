@@ -1,9 +1,15 @@
 header {
   background: url(./header.jpg);
-  height: 100px;
-  margin-bottom: 50px; }
+  height: 120px;
+  margin-bottom: 50px;
+  position: relative; }
   header h1 {
-    text-align: center; }
+    text-align: center;
+    font-size: 300%; }
+  header span {
+    float: right;
+    font-size: 150%;
+    padding-right: 10px; }
 
 .content {
   display: flex;
