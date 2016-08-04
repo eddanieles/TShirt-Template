@@ -29,3 +29,10 @@ header {
     padding-right: 10px; }
   .shirt span {
     float: right; }
+
+.shirt_page {
+  border: 1px solid lightblue; }
+  .shirt_page .shirt_content {
+    display: flex; }
+  .shirt_page h2 {
+    text-align: center; }

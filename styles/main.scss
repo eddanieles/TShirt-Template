@@ -39,3 +39,13 @@ header {
     float: right;
   }
 }
+
+.shirt_page {
+  border: 1px solid lightblue;
+  .shirt_content {
+    display: flex;
+  }
+  h2 {
+    text-align: center;
+  }
+}

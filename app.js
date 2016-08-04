@@ -1,6 +1,6 @@
-
-
 $(document).ready(function(){
+
+
 
   data.forEach(function(shirt) {
     var shirt = $(`<div class="shirt">
@@ -11,6 +11,17 @@ $(document).ready(function(){
       </p>
     </div>`);
     $(".content").append(shirt);
-  });
+
+  })
+  $(".shirt_page").hide();
+
+  $(".shirt").click(function(){
+    $(".content").hide();
+    $("h1").text("Shirt");
+    $(".shirt_page").show();
+  })
+
+
+
 
 })
