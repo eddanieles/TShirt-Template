@@ -15,19 +15,19 @@ header {
   display: flex;
   justify-content: space-around; }
 
-.shirt {
+.content a {
   flex: 1 1 0;
   border: 1px solid lightblue;
   max-width: 30%; }
-  .shirt img {
+  .content a img {
     width: 80%;
     margin: auto;
     display: block;
     margin-top: 10px; }
-  .shirt p {
+  .content a p {
     padding-left: 10px;
     padding-right: 10px; }
-  .shirt span {
+  .content a span {
     float: right; }
 
 .shirt_page {

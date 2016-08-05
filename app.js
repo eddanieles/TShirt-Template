@@ -1,18 +1,21 @@
 $(document).ready(function(){
 
   data.forEach(function(shirt) {
-    var shirt = $(`<div class="shirt" id=${shirt.id}>
+    var shirt = $(`<a href="#">
+      <div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
       <p>
         ${shirt.name}
         <span>$${shirt.price} <i class="fa fa-cart-plus" aria-hidden="true"></i></span>
       </p>
-    </div>`);
+    </div>
+    </a>`);
     $(".content").append(shirt);
   })
 
   $(".shirt").click(function(){
     $(".content").hide();
+    $(".cart_page").hide();
     $("h1").text("Shirt");
     var shirt_id = $(this).attr("id");
     var shirt_index = data[shirt_id - 1];
@@ -56,7 +59,6 @@ $(document).ready(function(){
       var AddtoCart_click = $(`<ul>
         <li>Does this work?</li>
       </ul>`);
-      console.log("Does this work?");
       $(".cart_page").append(AddtoCart_click);
     })
   }
@@ -64,14 +66,9 @@ $(document).ready(function(){
   $("#cart").click(function(){
     $(".content").hide();
     $(".shirt_page").hide();
+    $(".cart_page").show();
     $("h1").text("Shopping Cart");
   })
-
-
-  function AddtoCart(shirt) {
-
-  }
-
 
 
 })
