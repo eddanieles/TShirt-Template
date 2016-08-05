@@ -36,3 +36,9 @@ header {
     display: flex; }
   .shirt_page h2 {
     text-align: center; }
+  .shirt_page .sizes .sizes_submenu {
+    display: none; }
+    .shirt_page .sizes .sizes_submenu li:hover {
+      background-color: blue; }
+  .shirt_page .sizes:hover .sizes_submenu {
+    display: block; }

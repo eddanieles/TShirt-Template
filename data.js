@@ -19,7 +19,7 @@ var data = [
     scr: "./images/yellow-front.png",
     name: "Forest Walk",
     price: 39,
-    description: "Forege berries in this shirt.",
+    description: "Forged for berries in this shirt.",
     rating: "5 Stars",
     id: 3
   }

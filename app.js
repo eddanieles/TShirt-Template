@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-
-
   data.forEach(function(shirt) {
     var shirt = $(`<div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
@@ -13,19 +11,17 @@ $(document).ready(function(){
     $(".content").append(shirt);
   })
 
-
-  $(".shirt_page").hide();
-
   $(".shirt").click(function(){
     $(".content").hide();
     $("h1").text("Shirt");
-    console.log($(this));
-    // var shirt_id = $(this).attr("id");
+    var shirt_id = $(this).attr("id");
+    var shirt_index = data[shirt_id - 1];
+    shirt_display(shirt_index);
     // console.log(shirt_id);
     // $(".shirt_page").show();
   })
 
-  function shirt_display (shirt) {
+  function shirt_display(shirt) {
     var shirt = $(`<h2>${shirt.name}</h2>
 
     <div class="shirt_content">
@@ -37,17 +33,17 @@ $(document).ready(function(){
     <section>
       <ul>
         <li>${shirt.description}</li>
+        <li>Rating: ${shirt.rating}</li>
         <li>Price: $${shirt.price}</li>
         <li class="sizes">
           Size
-          <ul>
+          <ul class="sizes_submenu">
             <li>S</li>
             <li>M</li>
             <li>L</li>
             <li>XL</li>
           </ul>
         </li>
-        <li>Rating: ${shirt.rating}</li>
         <li><button type="button" name="button">Add to Cart</button></li>
       </ul>
     </section>`);
@@ -56,5 +52,10 @@ $(document).ready(function(){
   }
 
 
+  $(".sizes_submenu li").click(function(event){
+    var newText = $(this).text();
+    console.log(newText);
+    $(this).parent().prev().text(newText);
+  })
 
 })

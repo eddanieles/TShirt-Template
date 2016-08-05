@@ -48,4 +48,18 @@ header {
   h2 {
     text-align: center;
   }
+  .sizes {
+    .sizes_submenu {
+      display: none;
+      li {
+        &:hover {
+          background-color: blue;
+        }
+      }
+    }
+    &:hover .sizes_submenu{
+      display: block;
+    }
+
+  }
 }
