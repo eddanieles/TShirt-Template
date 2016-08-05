@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 
   data.forEach(function(shirt) {
-    var shirt = $(`<div class="shirt">
+    var shirt = $(`<div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
       <p>
         ${shirt.name}
@@ -11,14 +11,18 @@ $(document).ready(function(){
       </p>
     </div>`);
     $(".content").append(shirt);
-
   })
+
+
   $(".shirt_page").hide();
 
   $(".shirt").click(function(){
     $(".content").hide();
     $("h1").text("Shirt");
-    shirt_display($(this));
+    console.log($(this));
+    // var shirt_id = $(this).attr("id");
+    // console.log(shirt_id);
+    // $(".shirt_page").show();
   })
 
   function shirt_display (shirt) {
