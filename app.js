@@ -42,7 +42,7 @@ $(document).ready(function(){
             <li>XL</li>
           </ul>
         <li class="selected_size"></li>
-        <li class="AddtoCart"><button type="button" name="button">Add to Cart</button></li>
+        <li><button type="button" name="button" class="AddtoCart">Add to Cart</button></li>
       </ul>
     </section>`);
     $(".shirt_page").append(shirt);
@@ -52,7 +52,21 @@ $(document).ready(function(){
       $(".selected_size").text(newText);
     })
 
+    $(".AddtoCart").click(function(){
+      var AddtoCart_click = $(`<ul>
+        <li>Does this work?</li>
+      </ul>`);
+      console.log("Does this work?");
+      $(".cart_page").append(AddtoCart_click);
+    })
   }
+
+  $("#cart").click(function(){
+    $(".content").hide();
+    $(".shirt_page").hide();
+    $("h1").text("Shopping Cart");
+  })
+
 
   function AddtoCart(shirt) {
 
