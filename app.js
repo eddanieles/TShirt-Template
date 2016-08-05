@@ -17,8 +17,6 @@ $(document).ready(function(){
     var shirt_id = $(this).attr("id");
     var shirt_index = data[shirt_id - 1];
     shirt_display(shirt_index);
-    // console.log(shirt_id);
-    // $(".shirt_page").show();
   })
 
   function shirt_display(shirt) {
@@ -32,30 +30,34 @@ $(document).ready(function(){
 
     <section>
       <ul>
-        <li>${shirt.description}</li>
+        <li>Description: ${shirt.description}</li>
         <li>Rating: ${shirt.rating}</li>
         <li>Price: $${shirt.price}</li>
         <li class="sizes">
-          Size
+          Choose Size:
           <ul class="sizes_submenu">
             <li>S</li>
             <li>M</li>
             <li>L</li>
             <li>XL</li>
           </ul>
-        </li>
-        <li><button type="button" name="button">Add to Cart</button></li>
+        <li class="selected_size"></li>
+        <li class="AddtoCart"><button type="button" name="button">Add to Cart</button></li>
       </ul>
     </section>`);
     $(".shirt_page").append(shirt);
 
+    $(".sizes_submenu li").click(function(event){
+      var newText = $(this).text();
+      $(".selected_size").text(newText);
+    })
+
+  }
+
+  function AddtoCart(shirt) {
+
   }
 
 
-  $(".sizes_submenu li").click(function(event){
-    var newText = $(this).text();
-    console.log(newText);
-    $(this).parent().prev().text(newText);
-  })
 
 })
