@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   data.forEach(function(shirt) {
-    var shirt = $(`<a href="#">
+    var shirt = $(`<a href="#Shirt">
       <div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
       <p>
@@ -24,6 +24,7 @@ $(document).ready(function(){
     $(".shirt_page").show();
     $("h1").text("Shirt");
     var shirt_id = $(this).attr("id");
+    console.log(shirt_id);
     var shirt_index = data[shirt_id - 1];
     shirt_display(shirt_index);
     var shirt_price = shirt_index.price;
@@ -32,8 +33,11 @@ $(document).ready(function(){
       $total_price = $total_price + shirt_price;
       $("#total_price").text($total_price);
       cart_display(shirt_index);
+
     })
   })
+
+
 
   function cart_display(shirt) {
     var AddtoCart_click = $(`
@@ -45,7 +49,9 @@ $(document).ready(function(){
 
 
   function shirt_display(shirt) {
-    var shirt = $(`<h2>${shirt.name}</h2>
+    $(".ind_shirt").hide();
+    var shirt = $(`<div class="ind_shirt">
+      <h2>${shirt.name}</h2>
 
     <div class="shirt_content">
 
@@ -69,7 +75,8 @@ $(document).ready(function(){
         <li class="selected_size"></li>
         <li><button type="button" name="button" class="AddtoCart">Add to Cart</button></li>
       </ul>
-    </section>`);
+    </section>
+    </div>`);
     $(".shirt_page").append(shirt);
 
     $(".sizes_submenu li").click(function(event){
@@ -79,12 +86,18 @@ $(document).ready(function(){
 
   }
 
-
   $("#cart").click(function(){
     $(".content").hide();
     $(".shirt_page").hide();
     $(".cart_page").show();
     $("h1").text("Shopping Cart");
+  })
+
+  $("#home").click(function(){
+    $(".shirt_page").hide();
+    $(".cart_page").hide();
+    $(".content").show();
+    $("h1").text("Shirt Store");
   })
 
 
