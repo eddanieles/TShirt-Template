@@ -10,6 +10,8 @@ header {
     float: right;
     font-size: 150%;
     padding-right: 10px; }
+  header p {
+    padding-left: 10px; }
 
 .content {
   display: flex;
@@ -58,4 +60,10 @@ header {
     right: 0; }
   .cart_page p {
     font-size: 200%;
-    color: lightgreen; }
+    color: lightgreen;
+    margin-bottom: 5px;
+    margin-left: 10px; }
+  .cart_page button {
+    font-size: 150%;
+    margin-bottom: 10px;
+    margin-left: 10px; }
