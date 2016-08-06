@@ -24,7 +24,6 @@ $(document).ready(function(){
     $(".shirt_page").show();
     $("h1").text("Shirt");
     var shirt_id = $(this).attr("id");
-    console.log(shirt_id);
     var shirt_index = data[shirt_id - 1];
     shirt_display(shirt_index);
     var shirt_price = shirt_index.price;
@@ -43,7 +42,7 @@ $(document).ready(function(){
     var AddtoCart_click = $(`
       <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} <span class="price">$${shirt.price}</span></li>
     `);
-    console.log("Does this work?");
+    //console.log("Does this work?");
     $(".cart_list").append(AddtoCart_click);
   }
 
