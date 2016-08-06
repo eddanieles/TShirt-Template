@@ -56,3 +56,6 @@ header {
     position: absolute;
     bottom: 0;
     right: 0; }
+  .cart_page p {
+    font-size: 200%;
+    color: lightgreen; }

@@ -16,7 +16,7 @@ $(document).ready(function(){
   $(".shirt_page").hide();
   $(".cart_page").hide();
 
-  var total_price = 0;
+  var $total_price = 0;
 
   $(".shirt").click(function(){
     $(".content").hide();
@@ -26,9 +26,11 @@ $(document).ready(function(){
     var shirt_id = $(this).attr("id");
     var shirt_index = data[shirt_id - 1];
     shirt_display(shirt_index);
+    var shirt_price = shirt_index.price;
 
     $(".AddtoCart").click(function(){
-
+      $total_price = $total_price + shirt_price;
+      $("#total_price").text($total_price);
       cart_display(shirt_index);
     })
   })
