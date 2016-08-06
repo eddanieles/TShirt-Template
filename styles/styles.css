@@ -42,3 +42,17 @@ header {
       background-color: blue; }
   .shirt_page .sizes:hover .sizes_submenu {
     display: block; }
+
+.cart_page {
+  border: 1px solid lightblue; }
+  .cart_page ul {
+    width: 30%; }
+    .cart_page ul li {
+      border-bottom: 1px solid lightblue;
+      position: relative; }
+  .cart_page img {
+    width: 10%; }
+  .cart_page .price {
+    position: absolute;
+    bottom: 0;
+    right: 0; }

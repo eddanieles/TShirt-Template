@@ -63,3 +63,22 @@ header {
 
   }
 }
+
+.cart_page {
+  border: 1px solid lightblue;
+  ul{
+    width: 30%;
+    li {
+      border-bottom: 1px solid lightblue;
+      position: relative;
+    }
+  }
+  img {
+    width: 10%;
+  }
+  .price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -13,14 +13,34 @@ $(document).ready(function(){
     $(".content").append(shirt);
   })
 
+  $(".shirt_page").hide();
+  $(".cart_page").hide();
+
+  var total_price = 0;
+
   $(".shirt").click(function(){
     $(".content").hide();
     $(".cart_page").hide();
+    $(".shirt_page").show();
     $("h1").text("Shirt");
     var shirt_id = $(this).attr("id");
     var shirt_index = data[shirt_id - 1];
     shirt_display(shirt_index);
+
+    $(".AddtoCart").click(function(){
+
+      cart_display(shirt_index);
+    })
   })
+
+  function cart_display(shirt) {
+    var AddtoCart_click = $(`
+      <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} <span class="price">$${shirt.price}</span></li>
+    `);
+    console.log("Does this work?");
+    $(".cart_list").append(AddtoCart_click);
+  }
+
 
   function shirt_display(shirt) {
     var shirt = $(`<h2>${shirt.name}</h2>
@@ -55,13 +75,8 @@ $(document).ready(function(){
       $(".selected_size").text(newText);
     })
 
-    $(".AddtoCart").click(function(){
-      var AddtoCart_click = $(`<ul>
-        <li>Does this work?</li>
-      </ul>`);
-      $(".cart_page").append(AddtoCart_click);
-    })
   }
+
 
   $("#cart").click(function(){
     $(".content").hide();
