@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   data.forEach(function(shirt) {
-    var shirt = $(`<a href="#Shirt">
+    var shirt = $(`<a href="#Shirt${shirt.id}">
       <div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
       <p>
