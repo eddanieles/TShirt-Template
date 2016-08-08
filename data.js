@@ -6,6 +6,7 @@ var data = [
     description: "Help save the rainforest. With every purchase a new tree will be planted.",
     rating: "4 Stars",
     id: 1
+    
   },
   {
     scr: "./images/pink-front.png",

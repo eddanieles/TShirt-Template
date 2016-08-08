@@ -31,25 +31,28 @@ $(document).ready(function(){
     $(".AddtoCart").click(function(){
       $total_price = $total_price + shirt_price;
       $("#total_price").text($total_price);
-      cart_display(shirt_index);
-
+      cart_display(current_shirt);
     })
   })
 
 
 
   function cart_display(shirt) {
+
     var AddtoCart_click = $(`
-      <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} <span class="price">$${shirt.price}</span></li>
+      <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} ${shirt.size} <span class="price">$${shirt.price}</span></li>
     `);
     //console.log("Does this work?");
     $(".cart_list").append(AddtoCart_click);
   }
 
+  var current_shirt = {};
 
   function shirt_display(shirt) {
+    current_shirt = $.extend({}, shirt);
+
     $(".ind_shirt").hide();
-    var shirt = $(`<div class="ind_shirt">
+    var indy_shirt = $(`<div class="ind_shirt">
       <h2>${shirt.name}</h2>
 
     <div class="shirt_content">
@@ -76,11 +79,12 @@ $(document).ready(function(){
       </ul>
     </section>
     </div>`);
-    $(".shirt_page").append(shirt);
+    $(".shirt_page").html(indy_shirt);
 
     $(".sizes_submenu li").click(function(event){
       var newText = $(this).text();
       $(".selected_size").text(newText);
+      current_shirt["size"] = newText;
     })
 
   }
