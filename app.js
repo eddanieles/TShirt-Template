@@ -40,7 +40,7 @@ $(document).ready(function(){
   function cart_display(shirt) {
 
     var AddtoCart_click = $(`
-      <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} ${shirt.size} <span class="price">$${shirt.price}</span></li>
+      <li><img src=${shirt.scr} alt="${shirt.name}" /> ${shirt.name} / ${shirt.size} <span class="price">$${shirt.price}</span></li>
     `);
     //console.log("Does this work?");
     $(".cart_list").append(AddtoCart_click);
