@@ -29,9 +29,13 @@ $(document).ready(function(){
     var shirt_price = shirt_index.price;
 
     $(".AddtoCart").click(function(){
-      $total_price = $total_price + shirt_price;
+      if (current_shirt.size === undefined) {
+        alert("Choose a shirt size ass hole!");
+      } else  {
+        cart_display(current_shirt);
+        $total_price = $total_price + shirt_price;
+      }
       $("#total_price").text($total_price);
-      cart_display(current_shirt);
     })
   })
 
@@ -83,6 +87,15 @@ $(document).ready(function(){
 
     $(".sizes_submenu li").click(function(event){
       var newText = $(this).text();
+      if (newText === "S") {
+        newText = "Small";
+      } else if (newText === "M") {
+        newText = "Medium";
+      } else if (newText === "L") {
+        newText = "Large";
+      } else if (newText === "XL") {
+        newText = "Extra Large";
+      }
       $(".selected_size").text(newText);
       current_shirt["size"] = newText;
     })
