@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   data.forEach(function(shirt) {
-    var shirt = $(`<a href="#Shirt${shirt.id}">
+    var shirt = $(`<a href="#Shirt">
       <div class="shirt" id=${shirt.id}>
       <img src=${shirt.scr} alt=${shirt.name} />
       <p>
@@ -116,5 +116,15 @@ $(document).ready(function(){
     $("h1").text("Shirt Store");
   })
 
+  function showPage(pageID) {
+    $(".page").hide();
+    $(pageID).show();
+  }
+
+  $(window).on("hashchange", function(event){
+    showPage(location.hash);
+  })
+
+  location.hash = "#Home";
 
 })
